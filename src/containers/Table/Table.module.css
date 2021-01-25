@@ -1,0 +1,109 @@
+.Table {
+    /* text-align: center; */
+    align-items: center;
+    border-collapse: collapse;
+}
+
+.Table tbody {
+    display: block;
+    width: 100%;
+    height: 1000px;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.Table th {
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+    background-color: #1a508b;
+    color: #fff;
+}
+
+.Table td {
+    padding: 8px;
+}
+
+.Table tr:nth-child(even) {
+    background-color: #fff3e6;
+}
+
+.Table td:last-child {
+    background: #fff;
+    width: 80px;
+}
+
+.Table th:last-child {
+    background: #fff;
+}
+
+.Headers {
+    width: 100%;
+    background-color: #1a508b;
+    color: #fff;
+}
+
+.Remove {
+    cursor: pointer;
+}
+
+@media(max-width:1250px) and (min-width:857px) {
+    .Table {
+        font-size: 0.8rem;
+    }
+
+    .Table tbody {
+        display: block;
+        width: 100%;
+        height: 500px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        text-align: center;
+    }
+
+    .Table th {
+        padding: 10px 2px;
+    }
+
+    .Table td {
+        padding: 10px 2px;
+    }
+
+    .Table td:last-child {
+        background: #fff;
+        width: 50px;
+    }
+}
+
+@media(max-width:856px) {
+    .Table {
+        font-size: 0.5rem;
+    }
+
+    .Table tbody {
+        display: block;
+        width: 100%;
+        height: 500px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        text-align: center;
+    }
+
+    .Table th {
+        font-size: 0.6rem;
+        padding: 10px 0;
+    }
+
+    .Table td {
+        padding: 8px 2px;
+    }
+
+    .Table td:last-child {
+        background: #fff;
+        width: 50px;
+    }
+
+    .Remove {
+        font-size: 1rem;
+    }
+}
