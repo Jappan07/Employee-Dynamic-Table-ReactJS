@@ -188,7 +188,6 @@ class Form extends Component {
         else {
             this.setState({ displayHeader: "Form is Invalid ❌" })
         }
-        // this.setState({ date: new Date() })
     }
 
     clearForm = () => {
@@ -202,9 +201,16 @@ class Form extends Component {
     }
 
     renderFormAgain = () => {
-        this.setState({ isFormSubmitted: false })
         this.clearForm()
         this.setState({ date: new Date() })
+        const updatedEmployeeForm = { ...this.state.employeeForm }
+        const updatedElement = { ...this.state.employeeForm["dateOfJoining"] }
+        updatedElement.value = this.state.date.toDateString().substring(4)
+        updatedEmployeeForm["dateOfJoining"] = updatedElement
+        this.setState({
+            employeeForm: updatedEmployeeForm,
+            isFormSubmitted: false
+        })
     }
 
     render() {
