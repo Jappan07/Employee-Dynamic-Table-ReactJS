@@ -193,7 +193,7 @@ class Form extends Component {
             updatedEmployeeForm[elementName].value = ""
         }
 
-        this.setState({ employeeForm: updatedEmployeeForm, date: new Date() })
+        this.setState({ employeeForm: updatedEmployeeForm, date: new Date(), displayHeader: "Fill up the Employee Form" })
     }
 
     renderFormAgain = () => {
@@ -256,8 +256,8 @@ class Form extends Component {
                         }
                     })}
                 </form>
-                <Button clicked={this.onFormSubmitHandler}>Submit Details</Button>
                 <Button clicked={this.clearForm}>Clear</Button>
+                <Button clicked={this.onFormSubmitHandler}>Submit Details</Button>
                 <Button clicked={() =>
                     this.setState({
                         isFormSubmitted: true,
