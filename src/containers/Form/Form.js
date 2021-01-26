@@ -185,6 +185,7 @@ class Form extends Component {
 
         for (let elementName in this.state.employeeForm) {
             updatedEmployeeForm[elementName].value = ""
+            updatedEmployeeForm[elementName].touched = false
         }
 
         this.setState({ employeeForm: updatedEmployeeForm, date: new Date(), displayHeader: "Fill up the Employee Form" })
