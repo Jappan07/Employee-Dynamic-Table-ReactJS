@@ -206,6 +206,7 @@ class Form extends Component {
         this.setState({
             employeeForm: updatedEmployeeForm,
             isFormSubmitted: false,
+            displayHeader: "Fill up the Employee Form",
             date: currDate
         })
     }
