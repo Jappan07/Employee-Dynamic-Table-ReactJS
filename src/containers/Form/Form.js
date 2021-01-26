@@ -96,7 +96,7 @@ class Form extends Component {
         },
         loading: false,
         formIsValid: false,
-        isFormSubmitted: true,
+        isFormSubmitted: false,
         date: new Date(),
         displayHeader: "Fill up the Employee Form"
     }
