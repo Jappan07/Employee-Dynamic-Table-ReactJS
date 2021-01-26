@@ -257,7 +257,11 @@ class Form extends Component {
                 </form>
                 <Button clicked={this.onFormSubmitHandler}>Submit Details</Button>
                 <Button clicked={this.clearForm}>Clear</Button>
-                <Button clicked={() => this.setState({ isFormSubmitted: true })}>See Employee Table</Button>
+                <Button clicked={() =>
+                    this.setState({
+                        isFormSubmitted: true,
+                        displayHeader: "New Hiring Details Table"
+                    })}>See Employee Table</Button>
             </div>
         )
 
