@@ -54,7 +54,7 @@ class Form extends Component {
                 elementConfig: {
                     placeholder: "Department Name",
                     options: [
-                        { value: "others", displayValue: "Choose an option" },
+                        { value: "", displayValue: "Choose an option" },
                         { value: "hardware", displayValue: "Hardware" },
                         { value: "humanResource", displayValue: "Human Resource" },
                         { value: "marketing", displayValue: "Marketing" },
@@ -63,9 +63,7 @@ class Form extends Component {
                     ]
                 },
                 value: "",
-                validation: {
-                    isNotNull: false
-                },
+                validation: {},
                 valid: true,
             },
             email: {
@@ -152,7 +150,6 @@ class Form extends Component {
             const pattern = /^\d+$/;
             isValid = pattern.test(value) && isValid
         }
-
         return isValid
     }
 
@@ -184,7 +181,6 @@ class Form extends Component {
                     this.setState({ loading: false })
                 })
         }
-
         else {
             this.setState({ displayHeader: "Form is Invalid ❌" })
         }
@@ -261,6 +257,7 @@ class Form extends Component {
                 </form>
                 <Button clicked={this.onFormSubmitHandler}>Submit Details</Button>
                 <Button clicked={this.clearForm}>Clear</Button>
+                <Button clicked={() => this.setState({ isFormSubmitted: true })}>See Employee Table</Button>
             </div>
         )
 
