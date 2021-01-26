@@ -19,4 +19,5 @@
 .Button:hover {
     background-color: #fff3e6;
     color: black;
+    border: 5px solid #000000;
 }

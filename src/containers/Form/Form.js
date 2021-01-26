@@ -273,7 +273,6 @@ class Form extends Component {
                 <div className={classes.EmployeeTableContainer}>
                     <Table renderForm={this.renderFormAgain} formData={this.state.formData} />
                 </div>
-
         }
         return (
             <div>

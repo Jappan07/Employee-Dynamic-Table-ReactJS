@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className={classes.App} >
         <Button clicked={this.toggleFormHandler}>{!this.state.showForm ? "Open" : "Close"} Application</Button>
-        {this.state.showForm ? <Form /> : null}
+        {this.state.showForm ? <Form /> : <h1>NEW HIRING EMPLOYEE APPLICATION</h1>}
       </div>
     )
   }
