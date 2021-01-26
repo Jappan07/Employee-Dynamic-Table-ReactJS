@@ -28,7 +28,7 @@ class Table extends Component {
     }
 
     renderHeaders = () => {
-        const headers = ["Employee ID", "Name", "Department", "Email ID", "DOJ", ""]
+        const headers = ["Sno.", "Employee ID", "Name", "Department", "Email ID", "DOJ", ""]
         return headers.map(heading => {
             return (
                 <th key={heading}>{heading}</th>
@@ -52,9 +52,10 @@ class Table extends Component {
                     <tr className={classes.Headers}>
                         {this.renderHeaders()}
                     </tr>
-                    {this.state.formData.map(employee => {
+                    {this.state.formData.map((employee, index) => {
                         return (
                             <tr key={employee.id} >
+                                <td>{index + 1}</td>
                                 <td>{employee.empId}</td>
                                 <td>{employee.name}</td>
                                 <td>{employee.department}</td>
