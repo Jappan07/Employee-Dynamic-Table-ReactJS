@@ -162,23 +162,22 @@ class Form extends Component {
                 this.setState({ displayHeader: "New Hiring Details Table" })
 
             }, 1000);
+            // storing the form data
+            let formData = {}
+            for (let elementName in this.state.employeeForm) {
+                formData[elementName] = this.state.employeeForm[elementName].value
+            }
+            axios.post("/employees.json", formData)
+                .then(response => {
+                    this.setState({ loading: false })
+                })
+                .catch(error => {
+                    this.setState({ loading: false })
+                })
         }
         else {
             this.setState({ displayHeader: "Form is Invalid ❌" })
         }
-
-        // storing the form data
-        let formData = {}
-        for (let elementName in this.state.employeeForm) {
-            formData[elementName] = this.state.employeeForm[elementName].value
-        }
-        axios.post("/employees.json", formData)
-            .then(response => {
-                this.setState({ loading: false })
-            })
-            .catch(error => {
-                this.setState({ loading: false })
-            })
     }
 
     clearForm = () => {
