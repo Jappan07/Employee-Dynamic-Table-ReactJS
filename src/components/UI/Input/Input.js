@@ -26,7 +26,6 @@ const input = (props) => {
                 {props.elementConfig.options.map(option => {
                     return (
                         <option
-                            // selected={option.value === ""}
                             disabled={option.value === ""}
                             key={option.value}
                             value={option.value}>

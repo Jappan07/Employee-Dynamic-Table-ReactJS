@@ -54,7 +54,7 @@ class Form extends Component {
                 elementConfig: {
                     placeholder: "Department Name",
                     options: [
-                        { value: "", displayValue: "Choose an option" },
+                        { value: "others", displayValue: "Choose an option" },
                         { value: "hardware", displayValue: "Hardware" },
                         { value: "humanResource", displayValue: "Human Resource" },
                         { value: "marketing", displayValue: "Marketing" },
@@ -96,7 +96,7 @@ class Form extends Component {
         },
         loading: false,
         formIsValid: false,
-        isFormSubmitted: false,
+        isFormSubmitted: true,
         date: new Date(),
         displayHeader: "Fill up the Employee Form"
     }
@@ -197,19 +197,20 @@ class Form extends Component {
             updatedEmployeeForm[elementName].value = ""
         }
 
-        this.setState({ employeeForm: updatedEmployeeForm })
+        this.setState({ employeeForm: updatedEmployeeForm, date: new Date() })
     }
 
     renderFormAgain = () => {
         this.clearForm()
-        this.setState({ date: new Date() })
+        const currDate = new Date()
         const updatedEmployeeForm = { ...this.state.employeeForm }
         const updatedElement = { ...this.state.employeeForm["dateOfJoining"] }
-        updatedElement.value = this.state.date.toDateString().substring(4)
+        updatedElement.value = currDate.toDateString().substring(4)
         updatedEmployeeForm["dateOfJoining"] = updatedElement
         this.setState({
             employeeForm: updatedEmployeeForm,
-            isFormSubmitted: false
+            isFormSubmitted: false,
+            date: currDate
         })
     }
 
@@ -276,7 +277,7 @@ class Form extends Component {
         }
         return (
             <div>
-                <h2>{this.state.displayHeader}</h2>
+                <h2><u>{this.state.displayHeader}</u></h2>
                 {renderComponent}
             </div>
         )
