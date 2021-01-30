@@ -157,9 +157,7 @@ class Form extends Component {
         event.preventDefault()
         if (this.state.formIsValid) {
             this.setState({ displayHeader: "Form Submitted ✅" })
-            setTimeout(() => {
-                this.setState({ displayHeader: "New Hiring Details Table" })
-            }, 1000);
+            this.setState({ loading: true })
             // storing the form data
             let formData = {}
             for (let elementName in this.state.employeeForm) {
@@ -167,6 +165,7 @@ class Form extends Component {
             }
             axios.post("/employees.json", formData)
                 .then(response => {
+                    this.setState({ displayHeader: "New Hiring Details Table" })
                     this.setState({ isFormSubmitted: true })
                     this.setState({ loading: false })
                 })
